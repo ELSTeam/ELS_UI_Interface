@@ -1,0 +1,159 @@
+
+.partTwo{
+    margin-left: 50%;
+    
+}
+
+.All{
+    background-color: #e2e9e7;
+    width: 100vw;
+   height: 100vh;
+}
+
+.ELS{
+    font-Size: 1000%;
+   font-Family: 'Trebuchet MS';
+   color:  #497b4f;
+   text-Shadow: 10px white;
+   padding-left: 10%;
+   padding-top: 5%;
+
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    display: inline-block;
+    border: 1.5px solid rgb(160, 158, 158);
+    box-sizing: border-box;
+  }
+
+.subtitle {
+   color: white;
+   margin-top: -6%;
+   margin-left: 2%;
+}
+
+form {
+    border: 3px solid #f1f1f1;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  button {
+    background-color: #497b4f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }
+  
+.input {
+   line-height: 3;
+}
+
+.password-input {
+   line-height: 3;
+   margin-top: 3%;
+}
+
+.words {
+   font-size: 1000%;
+   font-Family: 'Cascadia Code';
+   color: white;
+   text-Shadow: 1px black;
+}
+
+.bottomwords {
+   color: white;
+   margin-Top: -6%;
+   margin-Left: 2%;
+}
+
+.nonvalid {
+   background: white;
+   border-Radius: 20px;
+   padding: 2%;
+}
+
+.name {
+   line-Height: 3;
+}
+
+.psswrd {
+   line-Height: 3;
+}
+
+.submitlogin {
+   background: #5DC3E7;
+   border: white;
+   margin-Left: 0%;
+   margin-Bottom: 1%;
+   margin-Top: 0%;
+}
+
+.submitsignup {
+   background: #5DC3E7;
+   border: white;
+   margin-Top: -3.5%;
+}
+
+.signupview {
+   background-Image: "/main_background.png";
+   width: 100vw;
+   height: 100vh;
+}
+
+.container {
+   margin: 100;
+   padding-Top: 7%;
+   left: 50%;
+}
+
+.wetalkview {
+   font-Size: 1000%;
+   font-Family: 'Cascadia Code';
+   color: white;
+   text-Shadow: 1px black;
+
+}
+
+.els-header {
+    text-align: center;
+    margin-top: 5%;
+    font-size: 800%;
+    font-Family: 'Trebuchet MS';
+}
+
+.els-sentence {
+    text-align: center;
+    margin-top: -18%;
+    margin-bottom: 9%;
+    font-Family: 'Trebuchet MS';
+}
+
+.img-div {
+    width: 60%;
+    display: flex;
+    margin-left: 20%;
+    justify-content: center;
+    background-image: url("../holding-hands-blured.png");
+    height: 45.3vh;
+}
+
+#login-form {
+    padding-top: 10.8%;
+}
+
+.main-div{
+    background-image: linear-gradient(to bottom right, rgba(152, 152, 152, 0.785), rgba(0, 113, 0, 0.397));
+    height: 100vh;
+}
