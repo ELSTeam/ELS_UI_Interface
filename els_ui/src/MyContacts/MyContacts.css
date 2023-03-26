@@ -1,0 +1,57 @@
+.myTable{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.418);
+    margin-left: 15%;
+    width: 70%;
+    margin-top: 3%;
+}
+
+.main-div{
+    height: 100vh;
+    background-image: url("../pic2.jpeg");
+    
+}
+
+tbody tr:hover {
+    background-color: #d4e6d5;
+  }
+
+.addcontact{
+    width: 35px;
+    height: 35px;
+    align-content: center;
+    background-color: lightblue;
+}
+
+.rows{
+    text-align: center;
+    font-size: x-large;
+    font-family:monospace;
+    height: 45px;
+}
+
+.firstRow{
+    font-size: large;
+}
+
+.button{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+
+.myContacts-header{
+    padding-top: 2%;
+    color:aliceblue;
+    text-align: center;
+    justify-content: center;
+    font-Size: 350%;
+    font-Family: 'Trebuchet MS';
+    color: black;
+    text-shadow: 100px;
+    
+}

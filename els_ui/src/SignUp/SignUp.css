@@ -1,0 +1,85 @@
+input[type=text], input[type=password], input[type=email], input[type=date] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    display: inline-block;
+    border: 1.5px solid rgb(160, 158, 158);
+    box-sizing: border-box;
+    font-Family: 'Trebuchet MS';
+  }
+
+  #username {
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.856);
+ }
+ 
+ #password{
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.856);
+    
+ }
+
+ #email{
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.856);
+ }
+
+ #birth{
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.856);
+    border-color: rgb(173, 166, 166);
+    font-size: small;
+    text-align: left;
+    color: rgb(141, 135, 135);
+ }
+
+ .tableSignUp{
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.518);
+    margin-top: -18%;
+ }
+
+ .img-div {
+    background-image: url("../pic5.jpg");
+    width: 70%;
+    margin-left: 24%;
+    border-radius: 15px;
+    justify-content: center;
+    padding-bottom: 10%;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: contain;
+ }
+
+.els-header {
+    text-align: center;
+    margin-top: 3%;
+    font-size: 700%;
+    font-Family: 'Trebuchet MS';
+}
+
+.els-sentence {
+    text-align: center;
+    margin-top: -18%;
+    margin-bottom: 9%;
+    font-Family: 'Trebuchet MS';
+}
+
+button {
+    background-color: #9ccda9c4;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-shadow: black;
+    border-radius: 15px;
+  }
+
+
+ .main-div{
+    height: 100vh;
+    background-image: url("../pic2.jpeg");
+    
+}
