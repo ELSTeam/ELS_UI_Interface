@@ -2,6 +2,34 @@ import './LoginView.css';
 import React from 'react';
 
 const LoginScreen = () => {
+  const clicked = (event) => {
+    event.preventDefault();
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // clear the input of the page
+    document.getElementById('username').value = '';
+    document.getElementById('password').value = '';
+
+    console.log("Sending ",username)
+    console.log("Sending ",password)
+    let return_status = null
+    // send login to server
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ "username": username,"password":password })
+    };
+      fetch('http://127.0.0.1:5000/sign_in', requestOptions)
+      .then(response => {
+        if (response.status == 200){
+          console.log("I'm in bro")
+        }
+        else {
+          console.log("No no")
+        }
+      })
+  }
   return (
     <div className='main-div'>
       <div style={{width: "50%", display:"flex", display: "inline-block", float: "left"}}>
@@ -20,7 +48,7 @@ const LoginScreen = () => {
         <label htmlFor="password">Password</label>
         <input type="password" className="form-control" id="password" placeholder="Password" />
       </div>
-      <button type="submit" className="btn btn-primary" style={{marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '15px', textShadow: 'black'}}>Log in</button>
+      <button onClick = {clicked} type="submit" className="btn btn-primary" style={{marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '15px', textShadow: 'black'}}>Log in</button>
       <p className='notRegistered'>Not Registered? <a href='#' style={{color: 'black'}}> Sign Up</a></p>
       </form>
       </div>
