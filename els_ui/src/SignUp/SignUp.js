@@ -2,6 +2,43 @@ import './SignUp.css';
 import React from 'react';
 
 const SignUpScreen = () => {
+  const clicked = (event) => {
+    event.preventDefault();
+
+    // get elements values
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value;
+    const birth = document.getElementById('birth').value;
+    
+    // just printing
+    console.log("Sending", username)
+    console.log("Sending", password)
+    console.log("Sending", email)
+    console.log("Sending", birth)
+
+    // clear the inputs
+    document.getElementById('username').value = "";
+    document.getElementById('password').value = "";
+    document.getElementById('email').value = ""; // I don't think we need the email address.
+    document.getElementById('birth').value = "";
+
+    // send post to the server
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ "username": username,"password":password, "birth":birth })
+    };
+      fetch('http://127.0.0.1:5000/sign_up', requestOptions)
+      .then(response => {
+        if (response.status == 200){
+          console.log("User created")
+        }
+        else {
+          console.log("Something wrong")
+        }
+      })
+  }
     return ( 
         <div className='main-div'>
       <div style={{width: "50%", display:"flex", display: "inline-block", float: "left"}}>
@@ -27,7 +64,7 @@ const SignUpScreen = () => {
         <label htmlFor="birth">BirthDay</label>
         <input type="date" className="form-control" id="birth" placeholder="BirthDay" />
       </div>
-      <button type="submit" className="btn btn-primary" style={{marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '15px', textShadow: 'black'}}>Sign Up</button>
+      <button type="submit" onClick = {clicked} className="btn btn-primary" style={{marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '15px', textShadow: 'black'}}>Sign Up</button>
       <p className='notRegistered'>Back to <a href='#' style={{color: 'black'}}> Login</a></p>
       </form>
       </div>
