@@ -1,5 +1,6 @@
 import './SignUp.css';
 import React from 'react';
+import { SERVER_URL } from '../config'
 
 const SignUpScreen = () => {
   const clicked = (event) => {
@@ -29,7 +30,7 @@ const SignUpScreen = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ "username": username,"password":password, "birth":birth })
     };
-      fetch('http://127.0.0.1:5000/sign_up', requestOptions)
+      fetch(`${SERVER_URL}/sign_up`, requestOptions)
       .then(response => {
         if (response.status == 200){
           console.log("User created")

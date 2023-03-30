@@ -1,5 +1,6 @@
 import './LoginView.css';
 import React from 'react';
+import { SERVER_URL } from '../config'
 
 const LoginScreen = () => {
   const clicked = (event) => {
@@ -20,7 +21,7 @@ const LoginScreen = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ "username": username,"password":password })
     };
-      fetch('http://127.0.0.1:5000/sign_in', requestOptions)
+      fetch(`${SERVER_URL}/sign_in`, requestOptions)
       .then(response => {
         if (response.status == 200){
           console.log("I'm in bro")
