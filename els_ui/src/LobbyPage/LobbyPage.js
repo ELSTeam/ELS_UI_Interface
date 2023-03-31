@@ -2,7 +2,8 @@ import './LobbyPage.css';
 import React from 'react';
 import MyImage from '../pictures/contact-logo.png';
 
-const LobbyPage = () => {
+const LobbyPage = (props) => {
+    // props.Username = username that is logged in
     return (
         <div className='main-div'>
             <div style={{ display: "flex", display: "inline-block", float: "center" }}>
