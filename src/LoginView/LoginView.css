@@ -1,0 +1,167 @@
+
+.partTwo{
+    margin-left: 50%;
+    
+}
+
+
+.tableSignIn{
+   border-radius: 15px;
+   background-color: rgba(255, 255, 255, 0.418);
+}
+
+.welcome{
+   font-Family: 'Brush Script MT';
+   text-align: center;
+   font-Size: 400%;
+   margin-top: -9%;
+}
+
+.ELS{
+   font-Size: 950%;
+   font-Family: 'Trebuchet MS';
+   color:  #497b4f;
+   text-Shadow: 10px white;
+   padding-left: 10%;
+   padding-top: 1%;
+
+}
+
+#username {
+   border-radius: 15px;
+   background-color: rgba(255, 255, 255, 0.856);
+}
+
+#password{
+   border-radius: 15px;
+   background-color: rgba(255, 255, 255, 0.856);
+   
+}
+
+.notRegistered{
+   margin-bottom: -1%;
+   margin-top: -1%;
+   font-Family: 'Trebuchet MS';
+}
+
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    display: inline-block;
+    border: 1.5px solid rgb(160, 158, 158);
+    box-sizing: border-box;
+    font-Family: 'Trebuchet MS';
+  }
+
+.subtitle {
+   color: white;
+   margin-top: -6%;
+   margin-left: 2%;
+}
+
+form {
+    border: 3px solid #f1f1f1;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  button {
+    background-color: #a6d5cfe6;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-shadow: black;
+    border-radius: 15px;
+  }
+
+
+  button:hover {
+    opacity: 0.8;
+  }
+  
+.input {
+   line-height: 3;
+}
+
+.password-input {
+   line-height: 3;
+   margin-top: 3%;
+}
+
+.words {
+   font-size: 1000%;
+   font-Family: 'Cascadia Code';
+   color: white;
+   text-Shadow: 1px black;
+}
+
+.bottomwords {
+   color: white;
+   margin-Top: -6%;
+   margin-Left: 2%;
+}
+
+.nonvalid {
+   background: white;
+   border-Radius: 20px;
+   padding: 2%;
+}
+
+.name {
+   line-Height: 3;
+}
+
+.psswrd {
+   line-Height: 3;
+}
+
+
+.container {
+   margin: 100;
+   padding-Top: 7%;
+   left: 50%;
+}
+
+
+.els-header {
+    text-align: center;
+    margin-top: 7%;
+    font-size: 800%;
+    font-Family: 'Trebuchet MS';
+}
+
+.els-sentence {
+    text-align: center;
+    margin-top: -15%;
+    margin-bottom: 9%;
+    font-Family: 'Trebuchet MS';
+}
+
+.img-div {
+    display: flex;
+    margin-right: 200px;
+    justify-content: center;
+    background-image: url("../pic5.jpg");
+    height: 330px;
+    margin-top: -9%;
+    mask-image: none;
+    width: 500px;
+}
+
+#login-form {
+    padding-top: 10.8%;
+   
+    
+}
+
+.main-div{
+    /* background-image: linear-gradient(to bottom right, rgba(152, 152, 152, 0.785), rgba(0, 113, 0, 0.397)); */
+    height: 100vh;
+    background-image: url("../pic1.jpg");
+    
+}

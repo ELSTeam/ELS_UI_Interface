@@ -1,0 +1,114 @@
+.myTable{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.418);
+    margin-left: 15%;
+    width: 70%;
+    margin-top: 3%;
+}
+
+.addContact{
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.418);
+    font-weight: 500;
+    margin-top: 13px;
+    font-size: large;
+    font-family:'Trebuchet MS';
+}
+
+.main-div{
+    height: 100vh;    
+}
+
+.BackToMyContacts{
+    margin-left: 83%;
+    margin-top: -7px;
+    font-size: large;
+    font-weight:500;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: -5px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  
+
+.BackToLobbyFromMyContact{
+    color: black;
+    margin-left: 87%;
+    font-size: large;
+    font-weight:500;
+}
+
+.button-delete-contact{
+    background-color: rgba(240, 248, 255, 0);
+    width: fit-content;
+    color: black;
+    font-family:monospace;
+}
+
+tbody tr:hover {
+    background-color: rgba(123, 161, 174, 0.559);
+  }
+
+.addcontact{
+    width: 35px;
+    height: 35px;
+    align-content: center;
+    background-color: lightblue;
+}
+
+.rows{
+    text-align: center;
+    font-size: large;
+    font-family:monospace;
+    height:fit-content;
+}
+
+.logo-img{
+    background-image: url("../logo.jpg");
+    background-size: 113%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.firstRow{
+    font-size: large;
+}
+
+.button{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+
+.myContacts-header{
+    padding-top: 2%;
+    color:aliceblue;
+    text-align: center;
+    justify-content: center;
+    font-Size: 350%;
+    font-Family: 'Trebuchet MS';
+    color: black;
+    font-weight: 300;
+    text-shadow: 100px;
+    
+}
+
+.BackToLobby{
+    margin-top: 14%;
+    margin-left: 87%;
+    font-size: large;
+    font-weight:500;
+}

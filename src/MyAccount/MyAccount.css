@@ -1,0 +1,55 @@
+.main-div{
+    height: 100vh;
+    background-image: url("../pic1.jpg");
+    
+}
+
+.myAccount-header{
+    padding-top: 2%;
+    color:aliceblue;
+    text-align: center;
+    justify-content: center;
+    font-Size: 350%;
+    font-Family: 'Trebuchet MS';
+    color: black;
+    font-weight: 300;
+    text-shadow: 100px;
+}
+
+.BackToLobby{
+    margin-left: 87%;
+    font-size: large;
+    font-weight:500;
+    margin-top:0%;
+}
+
+.main-table{
+    margin-top: 25px;
+    width: 70%;
+    border-radius: 15px;
+    border-color: rgb(240, 245, 242);
+    background-color: rgba(248, 242, 242, 0.386);
+}
+
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-Family: 'Trebuchet MS';
+    
+  }
+  
+  .form-item {
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    border-radius: 150px;
+    font-Family: 'Trebuchet MS';
+    font-size: large;
+  }
+  
+  input {
+    width: 80%;
+    border-radius: 12px;
+    text-align: left;
+
+  }

@@ -1,0 +1,53 @@
+.els-header{
+    font-Family: 'Trebuchet MS';
+}
+
+.square{
+    text-align: center;
+    text-decoration: antiquewhite;
+    margin-left: 1.35%;
+    font-size: xx-large;
+    height: 32vh;
+    align-content: center;
+    background-color: rgba(103, 137, 147, 0.674);
+    border: 1px solid rgb(160, 158, 158);
+    font-family: 'Trebuchet MS';
+    
+}
+
+.main-div{
+    height: 100vh;
+    text-align: center;
+    font-size: medium;
+}
+
+.logo-img{
+    background-image: url("../logo.jpg");
+    background-size: 113%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.logOut{
+    margin-top: -20px;
+    margin-left: 91%;
+    font-size: large;
+    font-weight:500;
+}
+
+.isConnected{
+    margin-left: 80%;
+    margin-top: -7%;
+    font-weight: 540;
+    font-size: large;
+    font-Family: 'Trebuchet MS';
+}
+
+.els-sentence {
+    text-align: center;
+    margin-top: -18%;
+    margin-bottom: 9%;
+    font-Family: 'Trebuchet MS';
+    margin-top: -53%;
+}

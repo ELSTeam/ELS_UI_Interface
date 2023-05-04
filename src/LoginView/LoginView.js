@@ -4,28 +4,37 @@ import LobbyPage from '../LobbyPage/LobbyPage'
 import SignUpScreen from '../SignUp/SignUp';
 import { SERVER_URL } from '../config'
 
-const LoginScreen = () => {
+const LoginScreen = (props) => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [ShowSignUp, setShowSignUp] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [userError, setUserError] = useState('');
-
+  const [userNotExist, setUserNotExist] = useState('');
 
   const handleLogin = (event) => {
+    
     event.preventDefault();
-    event.preventDefault();
+    if(password.length == 0 && username.length == 0 ){
+      setPasswordError('Please enter your data');
+       return;
+    }
+    else if (username.length == 0){
+      setUserError('Please enter your UserName');
+      return;
+    }
+    else if (password.length == 0){
+      setPasswordError('Please enter your password');
+       return;
+    }
+
     const username_input = document.getElementById('username').value;
     const password_input = document.getElementById('password').value;
 
-    // clear the input of the page
-    document.getElementById('username').value = '';
-    document.getElementById('password').value = '';
-
     console.log("Sending ",username_input)
     console.log("Sending ",password_input)
-    let return_status = null
+ 
     // send login to server
     const requestOptions = {
       method: 'POST',
@@ -39,6 +48,9 @@ const LoginScreen = () => {
           console.log("Logged in as: ",username)
           setLoggedIn(true);
         }
+        else if (response.status === 400) {
+          setUserNotExist('User do not exist, please go to Sign Up');
+        }
         else {
           console.log("No no")
         }
@@ -51,7 +63,7 @@ const LoginScreen = () => {
   };
 
   if (loggedIn) {
-    return <LobbyPage Username={username}/>;
+    return <LobbyPage username={username} password={password} email={props.email} birthday={props.birthday}/>;
   }
   if(ShowSignUp){
     return <SignUpScreen/>;
@@ -60,9 +72,11 @@ const LoginScreen = () => {
   return (
     <div className='main-div'>
       <div style={{width: "50%", display:"flex", display: "inline-block", float: "left"}}>
+      <div style={{paddingtop:'10px'}}>
       <p className='els-header'>ELS</p>
       <h2 className='els-sentence'>Elderly Life Server</h2>
-      <div className='img-div' style={{borderRadius:'15px', marginLeft:'21%', paddingLeft:'0%',imageResolution:'from-image'}}></div>
+      </div>
+      <div className='img-div' style={{marginLeft:'21%', paddingLeft:'0%',imageResolution:'from-image'}}></div>
       </div>
       <div className='partTwo' id='login-form'>
       <div className='welcome'> welcome !</div>
@@ -77,6 +91,7 @@ const LoginScreen = () => {
         <input type="password" className="form-control" id="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)}/>
         <div className="invalid-feedback" style={{color: 'red'}}>{passwordError}</div>
       </div>
+      <div className="invalid-feedback" style={{color: 'red'}}>{userNotExist}</div>
       <button type="submit" className="btn btn-primary" style={{marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '15px', textShadow: 'black'}}>Log in</button>
       <p className='notRegistered'>Not Registered? <a href="/signup" style={{color: 'black'}} onClick={handleSignUpClick}> Sign Up</a></p>
       </form>
@@ -86,3 +101,4 @@ const LoginScreen = () => {
 };
 
 export default LoginScreen;
+
