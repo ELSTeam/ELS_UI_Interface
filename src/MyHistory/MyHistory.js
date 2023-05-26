@@ -8,7 +8,7 @@ const MyHistory = (props) => {
   const [ShowLobby, setShowLobby] = useState(false);
   const [fallHistory, setFallHistory] = useState([]);
 
-  const username = "omerap12"
+  const username = props.username
   useEffect(() => {
     get_falls_history();
   }, []);
@@ -63,7 +63,6 @@ return (
             <th scope="col">#</th>
             <th scope="col">Date</th>
             <th scope="col">Time</th>
-            <th scope="col">Who Cared</th>
           </tr>
         </thead>
         <tbody>
@@ -72,7 +71,6 @@ return (
               <th scope="row">{index + 1}</th>
               <td>{fall.date}</td>
               <td>{fall.date.split(' ')[1]}</td>
-              <td>{fall.filename.split('#')[1].split('.')[0]}</td>
               <td><a href={fall.video_url}target='_blank'>Watch Video</a></td>
             </tr>
           ))}
