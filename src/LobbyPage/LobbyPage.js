@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 import MyContacts from '../MyContacts/MyContacts';
 import MyHistory from '../MyHistory/MyHistory';
 import MyAccount from '../MyAccount/MyAccount';
+import AboutAsImage from './path_to_about_us_image.png';
+import AboutUs from '../AboutUs/AboutUs';
 
 const LobbyPage = (props) => {
 
@@ -10,6 +12,7 @@ const LobbyPage = (props) => {
     const [ShowHistory, setShowHistory] = useState(false);
     const [ShowAccount, setShowAccount] = useState(false);
     const [contactList, setContactList] = useState([]);
+    const [ShowAboutUs, setShowAboutUs] = useState(false)
 
 
     if (ShowContacts){
@@ -22,6 +25,9 @@ const LobbyPage = (props) => {
 
     if (ShowAccount){
         return <MyAccount username={props.username} password={props.password} BirthDay={props.BirthDay} Email={props.Email}/>;
+    }
+    if (ShowAboutUs) {
+        return <AboutUs username={props.username} password={props.password} BirthDay={props.BirthDay} Email={props.Email}/>
     }
 
     const handleLogout = () => {
@@ -83,24 +89,20 @@ const LobbyPage = (props) => {
                 </button>
             </div>
                 
-            <button className='square' style={{ width: "20%", paddingTop:'40px'}}>
+            <button className='square' style={{ width: "20%", paddingTop:'40px'}} onClick={() => setShowAboutUs(true)} >
                 <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" fill="currentColor" class="bi bi-camera-fill" viewBox="0 0 16 16"  style={{color:'black'}}>
-                        <path d="M10.5 8.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
-                        <path d="M2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2zm.5 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm9 2.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0z"/>
-                        </svg>
+                <img src={AboutAsImage} alt="About Us" style={{ width: '30%', height: '30$%' }} />
                 </div>
                 <div>
-                <span>Control camera</span>
+                <span>About Us</span>
                 </div>
-                </button>
-
+            </button>
                 <button className='square' style={{ width: "20%" }} onClick={handleAccount}>
                 <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="25%" height="25%" fill="currentColor" class="bi bi-clipboard-data-fill" viewBox="0 0 16 16" style={{color:'black'}}>
-  <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
-  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1ZM10 8a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V8Zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1Zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z"/>
-</svg>
+                    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1ZM10 8a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V8Zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1Zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z"/>
+                    </svg>
                 </div>
                     <div>
                     <span>My account</span>
