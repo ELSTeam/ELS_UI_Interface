@@ -68,9 +68,9 @@ const SignUpScreen = () => {
     return ( 
         <div className='main-div'>
       <div style={{width: "50%", display:"flex", display: "inline-block", float: "left"}}>
-      <p className='els-header'>ELS</p>
-      <h2 className='els-sentence'>Elderly Life Server</h2>
-      <div className='img-div'></div>
+      <p className='els-header-signUp'>ELS</p>
+      <h2 className='els-sentence-signUp'>Elderly Life Server</h2>
+      <div className='img-div-signUp'></div>
       </div>
       <div className='partTwo' id='login-form'>
       <form className='tableSignUp' onSubmit={handleSignUp}>
@@ -90,11 +90,11 @@ const SignUpScreen = () => {
       </div>
       <div style={{fontFamily: 'Trebuchet MS'}} className="form-group">
         <label htmlFor="birth">BirthDay</label>
-        <input type="date" className="form-control" id="birth" placeholder="BirthDay" value={BirthDay} onChange={(event) => setBirthDay(event.target.value)}/>
+        <input type="date" className="form-control" id="birthdate" placeholder="BirthDay" value={BirthDay} onChange={(event) => setBirthDay(event.target.value)}/>
       </div>
       <div className="invalid-feedback" style={{color: 'red'}}>{dataError}</div>
-      <button type="submit" className="btn btn-primary" style={{marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '15px', textShadow: 'black'}}>Sign Up</button>
-      <p className='notRegistered'>Back to <a href= "/login" style={{color: 'black'}} onClick={handleLoginClick}> Login</a></p>
+      <button type="submit" className="button-signup" style={{marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '20px', textShadow: 'black'}}>Sign Up</button>
+      <p className='notRegistered'>Back to <a href= "/login" style={{color: 'black', fontSize:'20px'}} onClick={handleLoginClick}> Login</a></p>
       </form>
       </div>
     </div>

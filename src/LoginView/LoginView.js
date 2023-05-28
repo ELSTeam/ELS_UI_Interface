@@ -73,28 +73,29 @@ const LoginScreen = (props) => {
     <div className='main-div'>
       <div style={{width: "50%", display:"flex", display: "inline-block", float: "left"}}>
       <div style={{paddingtop:'10px'}}>
-      <p className='els-header'>ELS</p>
-      <h2 className='els-sentence'>Elderly Life Server</h2>
+      <p className='els-header-Login'>ELS</p>
+      <h2 className='els-sentence-Login'>Elderly Life Server</h2>
       </div>
-      <div className='img-div' style={{marginLeft:'21%', paddingLeft:'0%',imageResolution:'from-image'}}></div>
+      <div className='img-div-Login' style={{marginLeft:'13%'}}></div>
       </div>
       <div className='partTwo' id='login-form'>
       <div className='welcome'> welcome !</div>
       <form className='tableSignIn' onSubmit={handleLogin}>
-      <div style={{fontFamily: 'Trebuchet MS'}} className="form-group">
-        <label htmlFor="username">Username</label>
-        <input type="text" className="form-control" id="username" placeholder="Username" value={username} onChange={(event) => setUsername(event.target.value)} />
-        <div className="invalid-feedback" style={{color: 'red'}}>{userError}</div>
-      </div>
-      <div style={{fontFamily: 'Trebuchet MS'}} className="form-group">
-        <label htmlFor="password">Password</label>
-        <input type="password" className="form-control" id="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)}/>
-        <div className="invalid-feedback" style={{color: 'red'}}>{passwordError}</div>
-      </div>
-      <div className="invalid-feedback" style={{color: 'red'}}>{userNotExist}</div>
-      <button type="submit" className="btn btn-primary" style={{marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '15px', textShadow: 'black'}}>Log in</button>
-      <p className='notRegistered'>Not Registered? <a href="/signup" style={{color: 'black'}} onClick={handleSignUpClick}> Sign Up</a></p>
-      </form>
+  <div style={{ fontFamily: 'Trebuchet MS' }} className="form-group">
+    <label htmlFor="username" id="usernameLabel">Username</label>
+    <input type="text" className="form-control" id="username" placeholder="Username" value={username} onChange={(event) => setUsername(event.target.value)} />
+    <div className="invalid-feedback" style={{ color: 'red' }}>{userError}</div>
+  </div>
+  <div style={{ fontFamily: 'Trebuchet MS' }} className="form-group">
+    <label htmlFor="password" id='pwdLabel'>Password</label>
+    <input type="password" className="form-control" id="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} />
+    <div className="invalid-feedback" style={{ color: 'red' }}>{passwordError}</div>
+  </div>
+  <div className="invalid-feedback" style={{ color: 'red' }}>{userNotExist}</div>
+  <button type="submit" className="button-login" style={{ marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '24px', textShadow: 'black'}}>Log in</button>
+  <p className='notRegistered'>Not Registered? <a href="/signup" style={{ color: 'black'}} onClick={handleSignUpClick}> Sign Up</a></p>
+</form>
+
       </div>
     </div> 
   );

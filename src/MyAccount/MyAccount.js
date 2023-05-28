@@ -146,8 +146,8 @@ const MyAccount = (props) => {
       return(
         <div className='main-div'>
         <div>
-        <div className='myAccount-header' >My Account </div>
-        <div className='logo-img' style={{width:'120px', height:'120px', marginTop:'-100px',borderRadius:'16px'}}>
+        <div className='myAccount-header' style={{fontSize:'600%', textShadow:'revert'}} >My Account </div>
+        <div className='logo-img' style={{width:'200px', height:'200px', marginTop:'-10.5%',borderRadius:'16px'}}>
             </div>
         </div>
         <form className="main-table">
@@ -170,7 +170,7 @@ const MyAccount = (props) => {
                   />
                   </div>
                   <div style={{ background: "transparent"}}>
-                  <card style={{width: "fit-content", marginTop: "-5%"}}>
+                  <card style={{width: "fit-content", marginTop: "-10%"}}>
                   <img 
                   src={ image || userData.profilePicture} // use preview if available, else use userData.profilePicture
                   style={{borderRadius: "10rem", width:"20%", color: "white"}}
@@ -192,7 +192,7 @@ const MyAccount = (props) => {
           </label>
           </div>
         ))}
-        <div style={{alignContent:'center', textalign: 'center', marginLeft:'25%', width:'50%'}}>
+        <div style={{alignContent:'center', textalign: 'center', marginLeft:'25%', width:'50%', backgroundColor:'black'}}>
         {isEditing ? (
             <button type="button" style={{color:'black', fontFamily: 'Trebuchet MS', width:'50%'}} onClick={handleSave}>
               Save
