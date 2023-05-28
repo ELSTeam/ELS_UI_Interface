@@ -149,7 +149,7 @@ if (showAddContact) {
     <div className='main-div'>
       <div>
         <div className='myContacts-header'>Add Contact</div>
-        <div className='logo-img' style={{width:'120px', height:'120px', marginTop:'-100px',borderRadius:'16px'}}>
+        <div className='logo-img' style={{width:'200px', height:'200px',borderRadius:'16px', marginTop:'-18%'}}>
             </div>
       </div>
       <form className='addContact' onSubmit={handleSubmit} style={{marginTop:'2px'}}>
@@ -181,7 +181,7 @@ if (showAddContact) {
         <div className='main-div'>
         <div>
         <div className='myContacts-header'>My Contacts</div>
-        <div className='logo-img' style={{width:'120px', height:'120px', marginTop:'-100px',borderRadius:'16px'}}>
+        <div className='logo-img' style={{width:'200px', height:'200px',borderRadius:'16px', marginTop:'-18%'}}>
             </div>
         </div>
         <div className='divButton'>
