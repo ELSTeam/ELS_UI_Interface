@@ -1,0 +1,41 @@
+.about-us {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 1%;
+    text-align: center;
+    font-Family: 'Trebuchet MS';
+  }
+
+  .main-div{
+    background-image: url("../pic1.jpg");
+}
+  .about-us h1 {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .BackToLobbyFromAbout{
+    margin-left: 87%;
+    font-size: xx-large;
+    font-weight: 700;
+}
+
+  .LAST-P{
+    margin-bottom: '-20px';
+  }
+  
+  .about-us p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 1px;
+  }
+  .about-text {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .about-text a {
+    position: relative;
+    z-index: 2;
+  }
+  
