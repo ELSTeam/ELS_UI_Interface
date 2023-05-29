@@ -12,7 +12,7 @@ const MyAccount = (props) => {
         username: props.username,
         password: props.password,
         email: props.Email,
-        birthdate: props.BirthDay,
+        birthDay: props.BirthDay,
         profilePicture: props.profilePicture || defualtProfile,
       });
 
@@ -39,7 +39,7 @@ const MyAccount = (props) => {
                     username: data.username || props.username,
                     password: data.password || props.password,
                     email: data.email,
-                    birthdate: formattedDate,
+                    birthDay: formattedDate,
                     profilePicture: data.profilePicture || props.profilePicture || defualtProfile,
                 });
             } else {
@@ -49,6 +49,30 @@ const MyAccount = (props) => {
     
         fetchUserData();
     }, [props.username, props.password, props.Email, props.BirthDay, props.profilePicture]);
+
+
+    const fetchUserPicture = async () => {
+      const response = await fetch(`${SERVER_URL}/get_photo`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username: props.username }),
+      });
+
+      if (response.ok) {
+        const data = await response.text();
+        if (data.startsWith('https://')) {
+          setImage(data);
+        } else {
+          console.error(`Invalid response: ${data}`);
+        }
+      } else {
+        console.error(`Failed to fetch image`);
+      }
+    };
+
+    useEffect(() => {
+      fetchUserPicture();
+    }, []);
     
 
     if (ShowLobby) {
@@ -56,15 +80,15 @@ const MyAccount = (props) => {
     }
 
     const handleLobbyClick = (event) => {
-    event.preventDefault();
-    setShowLobby(true);
+      event.preventDefault();
+      setShowLobby(true);
     };
     
     const getInputType = (key) => {
         switch (key) {
           case "username":
             return "text";
-          case "birthdate":
+          case "birthDay":
             return "date";
           case "password":
             return "password";
@@ -78,32 +102,30 @@ const MyAccount = (props) => {
       };
       
     
-      const handleImageChange = (event) => {
-        const selectedImage = event.target.files[0];
-        const reader = new FileReader();
-    
-      const newFileName = `${selectedImage.name}#${userData.username}`;
-      const newFile = new File([selectedImage], newFileName, { type: selectedImage.type });
-
-      reader.onload = () => {
-        setImage(reader.result);
-    
-        // Send POST request to upload photo
-        const formData = new FormData();
-        formData.append('file', newFile);
-    
-        fetch(`${SERVER_URL}/upload_photo`, {
-          method: 'POST',
-          body: formData,
-        })
-          .then((response) => {
-            // Handle response
-          })
-          .catch((error) => {
-            // Handle error
-          });
-      };
-      reader.readAsDataURL(selectedImage);
+      const handleImageChange = async (file) => {
+            setUserData({ ...userData, "profilePicture": file });
+            let newFileName;
+            if (file.name) {
+                newFileName = `${file.name.split('.')[0]}#${props.username}.png`;
+            }
+            else {
+                const randomString = Math.random().toString(36).substring(2, 8);
+                newFileName = `${randomString}#${props.username}.jpg`;
+            }
+            const newFile = new File([file], newFileName, { type: file.type });
+            const formData = new FormData();
+            formData.append('file', newFile);
+            const response = await fetch(`${SERVER_URL}/upload_photo`, {
+                method: 'POST',
+                body: formData,
+            });
+            fetchUserPicture();
+            if (response.ok) {
+                console.log('Upload successful');
+                fetchUserPicture();
+            } else {
+                console.error(`Upload failed: ${response.status} ${response.statusText}`);
+            }
     };
 
       const handleChange = (e) => {
@@ -137,73 +159,83 @@ const MyAccount = (props) => {
     
       const handleSave = () => {
         setIsEditing(false);
-        //console.log("Data saved:", userData);
         updateUserDetails();
       };
     
 
-
       return(
         <div className='main-div'>
         <div>
-        <div className='myAccount-header' style={{fontSize:'600%', textShadow:'revert'}} >My Account </div>
-        <div className='logo-img' style={{width:'200px', height:'200px', marginTop:'-10.5%',borderRadius:'16px'}}>
+        <div className='myAccount-header' >My Account </div>
+        <div className='logo-img' style={{width:'120px', height:'120px', marginTop:'-100px',borderRadius:'16px'}}>
             </div>
         </div>
         <form className="main-table">
         <div className="form-container">
-       
         {Object.keys(userData).map((key) => (
-          <div key={key} className={`form-item`}>
-                      <label>
-            {key.charAt(0).toUpperCase() + key.slice(1)}:
-            {key === "profilePicture" ? (
-              <div >
-                <div style={{marginTop: "5%", float: "left", width: "30%", marginLeft: "34.8%", color:"transparent"}}>
+          key === "profilePicture" ? (
+            <div key={key} className={`form-item`}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <label htmlFor="profile-picture-input">
+                  <div
+                    style={{
+                      width: "100px",
+                      height: "100px",
+                      borderRadius: "50%",
+                      overflow: "hidden",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      cursor: "pointer",
+                      marginLeft: "424%",
+                      marginTop: "15%",
+                      marginBottom: "15%"
+                    }}
+                  >
+                    <img
+                      src={image || userData.profilePicture}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      alt="profile"
+                    />
+                  </div>
+                </label>
                 <input
-                    type="file"
-                    name={key}
-                    onChange={handleImageChange}
-                    disabled={!isEditing}
-                    accept="image/*"
-                    style={{borderRadius: "0%", color:'transparent'}}
-                  />
-                  </div>
-                  <div style={{ background: "transparent"}}>
-                  <card style={{width: "fit-content", marginTop: "-10%"}}>
-                  <img 
-                  src={ image || userData.profilePicture} // use preview if available, else use userData.profilePicture
-                  style={{borderRadius: "10rem", width:"20%", color: "white"}}
-                  alt="profile"
-                  />
-                  </card>
-                  </div>
+                  id="profile-picture-input"
+                  type="file"
+                  name={key}
+                  onChange={(event) => handleImageChange(event.target.files[0])}
+                  disabled={!isEditing}
+                  accept="image/*"
+                  style={{ display: "none" }}
+                />
               </div>
-            ) : (
-              <input
-                type={getInputType(key)}
-                name={key}
-                value={userData[key]}
-                onChange={handleChange}
-                disabled={!isEditing}
-              />
-            )}
-
-          </label>
-          </div>
+            </div>
+          ) : (
+            <div key={key} className={`form-item`}>
+              <label>
+                {key.charAt(0).toUpperCase() + key.slice(1)}:
+                <input
+                  type={getInputType(key)}
+                  name={key}
+                  value={userData[key]}
+                  onChange={handleChange}
+                  disabled={!isEditing}
+                />
+              </label>
+            </div>
+          )
         ))}
-        <div style={{alignContent:'center', textalign: 'center', marginLeft:'25%', width:'50%', backgroundColor:'black'}}>
-        {isEditing ? (
-            <button type="button" style={{color:'black', fontFamily: 'Trebuchet MS', width:'50%'}} onClick={handleSave}>
+        <div style={{ alignContent: "center", textAlign: "center", marginLeft: "25%", width: "50%" }}>
+          {isEditing ? (
+            <button type="button" style={{ color: "black", fontFamily: "Trebuchet MS", width: "50%" }} onClick={handleSave}>
               Save
             </button>
           ) : (
-            <button type="button" style={{color:'black', fontFamily: 'Trebuchet MS', width:'50%'}} onClick={handleEdit}>
+            <button type="button" style={{ color: "black", fontFamily: "Trebuchet MS", width: "50%" }} onClick={handleEdit}>
               Edit
             </button>
           )}
         </div>
-        
         </div>
       </form>
         <div className="footer">
