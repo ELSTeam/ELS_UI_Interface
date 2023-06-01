@@ -148,13 +148,13 @@ if (showAddContact) {
   return (
     <div className='main-div'>
       <div>
-        <div className='myContacts-header'>Add Contact</div>
-        <div className='logo-img' style={{width:'200px', height:'200px',borderRadius:'16px', marginTop:'-18%'}}>
+        <div className='addContacts-header'>Add Contact</div>
+        <div className='logo-img' style={{width:'200px', height:'200px',borderRadius:'16px', marginTop:'-8%'}}>
             </div>
       </div>
       <form className='addContact' onSubmit={handleSubmit} style={{marginTop:'2px'}}>
         <div>
-          <label>Name:</label>
+          <label className='label-add-contact'>Name:</label>
           <input type='text' value={contactName} onChange={handleContactNameChange} />
         </div>
         <div>
@@ -163,12 +163,10 @@ if (showAddContact) {
         </div>
         <div>
         <label>Email:</label>
-          <input type="Email" value={mail} onChange={handleMailChange} />
+          <input type="Email" style={{height:'6vh', fontSize:'30px'}} value={mail} onChange={handleMailChange} />
         </div>
         <div className="invalid-feedback" style={{color: 'red'}}>{dataError}</div>
-        <div>
-          <button type='submit' style={{fontWeight:'400'}}>Add Contact</button>
-        </div>
+        <button type="submit" className="button-login" style={{ marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '24px', textShadow: 'black'}}> Add contact</button>
       </form>
       <div>
 <p className='BackToMyContacts'>Back to <a href= "" style={{color: 'black'}} onClick={handleContacts}> my Contacts</a></p>
@@ -180,28 +178,26 @@ if (showAddContact) {
     return (
         <div className='main-div'>
         <div>
-        <div className='myContacts-header'>My Contacts</div>
-        <div className='logo-img' style={{width:'200px', height:'200px',borderRadius:'16px', marginTop:'-18%'}}>
+        <div className='myContacts-header' style={{fontSize:'500%', fontWeight:'bold'}}>My Contacts</div>
+        <div className='logo-img' style={{width:'200px', height:'200px',borderRadius:'16px', marginTop:'-8%'}}>
             </div>
         </div>
-        <div className='divButton'>
-        <button className='button' style={{marginLeft:'-850px'}} onClick={handleAddContactClick}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="30px" height="30px" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16" style={{color:'black', marginLeft:'-19px', marginTop:'-12px'}}>
-            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
-            </svg>
-        </button>    
-        <div style={{color:'black', alignContent:'center', fontFamily:'Trebuchet MS', fontSize:'20px', marginLeft:'-680px', marginTop:'-30px'}}>
-        <span>Add contact</span>
-        </div>
-        </div>
+        
+        <button style={{ display: 'flex', alignItems: 'center', border:'none', background:'none', marginLeft:'20%', fontSize:'160%', fontFamily:'Trebuchet MS' }}  onClick={handleAddContactClick}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="8%" height="8%" fill="currentColor" className="bi bi-plus-circle-fill" viewBox="0 0 16 16" style={{ color: 'black', marginRight: '5px' }}>
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
+      </svg>
+      <span style={{paddingLeft:'3%', width:'fit-content'}}>Add Contact</span>
+    </button>
+      
         <table class="table table-hover" className='myTable' style={{alignContent:'center', hover:'20'}}>
   <thead>
     <tr className='firstRow'>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Email</th>
-      <th scope="col">Action</th>
+      <th scope="col" className='table-topic'>#</th>
+      <th scope="col" className='table-topic'>Name</th>
+      <th scope="col" className='table-topic'>Phone</th>
+      <th scope="col" className='table-topic'>Email</th>
+      <th scope="col" className='table-topic'>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -213,7 +209,7 @@ if (showAddContact) {
       <td>{contact.email}</td>
       <td>
       <button className='button-delete-contact' onClick={() => handleDelete(contact.name)}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
         <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
       </svg>
     </button>

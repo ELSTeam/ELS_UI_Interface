@@ -1,33 +1,47 @@
 .about-us {
-    max-width: 800px;
+    max-width: 65%;
     margin: 0 auto;
     padding-top: 1%;
     text-align: center;
     font-Family: 'Trebuchet MS';
   }
 
+  .logo-img-about-as{
+    background-image: url("../logo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .main-div-about-as{
+    border-color: rgb(240, 245, 242);
+    background-color: rgba(248, 242, 242, 0.553);
+    border-radius: 15px;
+    margin-top: 1%;
+    padding: 1%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+
   .main-div{
     background-image: url("../pic1.jpg");
 }
   .about-us h1 {
-    font-size: 40px;
+    font-size: 480%;
     font-weight: bold;
+    text-shadow: 10px;
+    margin-top: -14%;
   }
 
-  .BackToLobbyFromAbout{
-    margin-left: 87%;
-    font-size: xx-large;
-    font-weight: 700;
-}
-
   .LAST-P{
-    margin-bottom: '-20px';
+    margin-bottom: '-10px';
   }
   
   .about-us p {
-    font-size: 16px;
+    font-size: 23px;
     line-height: 1.5;
-    margin-bottom: 1px;
+    margin-top: 3%;
   }
   .about-text {
     position: relative;

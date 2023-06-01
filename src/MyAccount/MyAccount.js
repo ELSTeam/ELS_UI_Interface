@@ -167,8 +167,8 @@ const MyAccount = (props) => {
       return(
         <div className='main-div'>
         <div>
-        <div className='myAccount-header' >My Account </div>
-        <div className='logo-img' style={{width:'120px', height:'120px', marginTop:'-100px',borderRadius:'16px'}}>
+        <div className='myAccount-header'>My Account </div>
+        <div className='logo-img' style={{width:'190px', height:'190px', marginTop:'-8%',borderRadius:'16px'}}>
             </div>
         </div>
         <form className="main-table">
@@ -222,28 +222,28 @@ const MyAccount = (props) => {
                   value={userData[key]}
                   onChange={handleChange}
                   disabled={!isEditing}
-                  style={{ fontSize: "20px", padding: "14px" }}
+                  style={{ fontSize: "20px", padding: "16px" }}
                 />
               </label>
             </div>
           )
         ))}
-        <div style={{ alignContent: "center", textAlign: "center", marginLeft: "33%", width: "35%" }}>
+        <div style={{ alignContent: "center", textAlign: "center", marginLeft: "30%", width: "40%", height:'20%'}}>
           {isEditing ? (
-            <button type="button" className="button-login" style={{ marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '24px', textShadow: 'black'}} onClick={handleSave}>
+            <button type="button" className="button-login" style={{ marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '26px', textShadow: 'black'}} onClick={handleSave}>
               Save
             </button>
           ) : (
-            <button type="button" className="button-login" style={{ marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '24px', textShadow: 'black'}} onClick={handleEdit}>
+            <button type="button" className="button-login" style={{ marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '26px', textShadow: 'black', padding:'13px'}} onClick={handleEdit}>
               Edit
             </button>
           )}
         </div>
         </div>
       </form>
-        <div className="footer">
-        <p className='BackToLobby'>Back to <a href= "/lobby" style={{color: 'black'}} onClick={handleLobbyClick}> Lobby</a></p>
-        </div>
+        <strong className="footer"  style={{fontSize:'150%', color:'black', fontWeight:'500', marginleft: '87%'}}>
+        <p className='BackToLobbyFromAccount'>Back to <a href= "/lobby" style={{color: 'black'}} onClick={handleLobbyClick}> Lobby</a></p>
+        </strong>
         </div>
 
     );
