@@ -5,22 +5,19 @@
 }
 
 .myAccount-header{
-    padding-top: 2%;
     color:aliceblue;
     text-align: center;
-    justify-content: center;
-    font-Size: 350%;
+    font-Size: 500%;
     font-Family: 'Trebuchet MS';
     color: black;
-    font-weight: 300;
-    text-shadow: 100px;
+    font-weight: 505;
+    padding-top: 2%;
 }
 
-.BackToLobby{
+.BackToLobbyFromAccount{
     margin-left: 87%;
-    font-size: large;
-    font-weight:500;
-    margin-top:0%;
+    font-weight: 600;
+    font-Family: 'Trebuchet MS';
 }
 
 .main-table{
@@ -28,12 +25,13 @@
     width: 70%;
     border-radius: 15px;
     border-color: rgb(240, 245, 242);
-    background-color: rgba(248, 242, 242, 0.386);
+    background-color: rgba(248, 242, 242, 0.44);
 }
 
 .form-container {
     display: flex;
     flex-wrap: wrap;
+    height: fit-content;
     font-Family: 'Trebuchet MS';
     
   }
@@ -41,14 +39,16 @@
   .form-item {
     flex: 0 0 50%;
     box-sizing: border-box;
-    padding: 0 10px;
+    padding: 0 9px;
     border-radius: 150px;
     font-Family: 'Trebuchet MS';
-    font-size: large;
+    font-size: 150%;
   }
   
   input {
     width: 80%;
     border-radius: 12px;
     text-align: left;
+    background-color: rgba(255, 255, 255, 0.548);
+    font-Family: 'Trebuchet MS';
   }

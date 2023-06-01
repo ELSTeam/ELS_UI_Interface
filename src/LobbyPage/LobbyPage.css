@@ -27,7 +27,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
 }
 
 .logOut{
@@ -47,7 +46,7 @@
 
 .els-header-lobby {
     text-align: center;
-    margin-top: 7%;
+    margin-top: 1%;
     font-size: 1300%;
     font-family: 'Trebuchet MS';
  }

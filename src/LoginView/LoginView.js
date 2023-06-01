@@ -80,20 +80,20 @@ const LoginScreen = (props) => {
       </div>
       <div className='partTwo' id='login-form'>
       <div className='welcome'> welcome !</div>
-      <form className='tableSignIn' onSubmit={handleLogin}>
+      <form className='tableSignIn' onSubmit={handleLogin} style={{paddingBottom:'57px'}}>
   <div style={{ fontFamily: 'Trebuchet MS' }} className="form-group">
     <label htmlFor="username" id="usernameLabel">Username</label>
-    <input type="text" className="form-control" id="username" placeholder="Username" value={username} onChange={(event) => setUsername(event.target.value)} />
+    <input type="text" className="form-control" style={{height:'55px'}} id="username" placeholder="Username" value={username} onChange={(event) => setUsername(event.target.value)} />
     <div className="invalid-feedback" style={{ color: 'red' }}>{userError}</div>
   </div>
   <div style={{ fontFamily: 'Trebuchet MS' }} className="form-group">
     <label htmlFor="password" id='pwdLabel'>Password</label>
-    <input type="password" className="form-control" id="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} />
+    <input type="password" className="form-control" style={{height:'55px'}} id="password" placeholder="Password" value={password} onChange={(event) => setPassword(event.target.value)} />
     <div className="invalid-feedback" style={{ color: 'red' }}>{passwordError}</div>
   </div>
   <div className="invalid-feedback" style={{ color: 'red' }}>{userNotExist}</div>
   <button type="submit" className="button-login" style={{ marginBottom: "5%", fontFamily: 'Trebuchet MS', fontSize: '24px', textShadow: 'black'}}>Log in</button>
-  <p className='notRegistered'>Not Registered? <a href="/signup" style={{ color: 'black'}} onClick={handleSignUpClick}> Sign Up</a></p>
+  <p className='notRegistered' style={{fontSize:'100%'}}>Not Registered? <a href="/signup" style={{ color: 'black'}} onClick={handleSignUpClick}> Sign Up</a></p>
 </form>
 
       </div>

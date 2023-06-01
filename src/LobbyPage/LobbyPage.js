@@ -79,7 +79,7 @@ const LobbyPage = (props) => {
                 <p className='els-header-lobby' >ELS</p>
                 <div className='els-sentence-lobby' >Elderly Life Server</div>
             </div>
-            <div className='logo-img' style={{width:'200px', height:'200px',borderRadius:'16px', marginTop:'-18%'}}>
+            <div className='logo-img' style={{width:'200px', height:'200px',borderRadius:'16px', marginTop:'-16%'}}>
             </div>
             <div className='isConnected'>
                 <div 
