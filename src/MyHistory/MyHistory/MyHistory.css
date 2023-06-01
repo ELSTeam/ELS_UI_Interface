@@ -1,0 +1,47 @@
+.myTable-history{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.418);
+    margin-left: 15%;
+    width: 70%;
+    margin-top: 3%;
+}
+
+tbody tr:hover {
+    background-color: rgba(123, 161, 174, 0.559);
+  }
+
+.rows{
+    text-align: center;
+    font-size: 20px;
+    font-Family: 'Trebuchet MS';
+    height: 54px;
+}
+
+.firstRow{
+    font-size: 28px;
+    font-Family: 'Trebuchet MS';
+}
+
+
+.myContacts-header{
+    padding-top: 2%;
+    color:aliceblue;
+    text-align: center;
+    justify-content: center;
+    font-Size: 350%;
+    font-Family: 'Trebuchet MS';
+    color: black;
+    font-weight: 300;
+    text-shadow: 100px;
+    
+}
+
+.BackToLobbyFromHistory{
+    color: black;
+    margin-left: 87%;
+    font-size: 150%;
+    font-weight:600;
+}
