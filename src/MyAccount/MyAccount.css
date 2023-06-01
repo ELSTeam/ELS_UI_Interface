@@ -5,7 +5,7 @@
 }
 
 .myAccount-header{
-    padding-top: 4%;
+    padding-top: 2%;
     color:aliceblue;
     text-align: center;
     justify-content: center;
@@ -16,7 +16,6 @@
     text-shadow: 100px;
 }
 
-
 .BackToLobby{
     margin-left: 87%;
     font-size: large;
@@ -25,19 +24,18 @@
 }
 
 .main-table{
-    margin-top: 2%;
+    margin-top: 25px;
     width: 70%;
     border-radius: 15px;
     border-color: rgb(240, 245, 242);
     background-color: rgba(248, 242, 242, 0.386);
-    
 }
 
 .form-container {
     display: flex;
     flex-wrap: wrap;
     font-Family: 'Trebuchet MS';
-    font-size: xx-large;
+    
   }
   
   .form-item {
@@ -46,13 +44,11 @@
     padding: 0 10px;
     border-radius: 150px;
     font-Family: 'Trebuchet MS';
-    font-size: x-large;
+    font-size: large;
   }
   
   input {
-    width: 70%;
+    width: 80%;
     border-radius: 12px;
     text-align: left;
-    height: 5vh;
-
   }
