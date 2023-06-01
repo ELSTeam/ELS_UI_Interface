@@ -1,9 +1,12 @@
 import './LobbyPage.css';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import MyContacts from '../MyContacts/MyContacts';
 import MyHistory from '../MyHistory/MyHistory';
 import MyAccount from '../MyAccount/MyAccount';
 import AboutUs from '../AboutAs/AboutAs';
+import defaultProfile from "../defualt.png";
+import { SERVER_URL } from '../config';
+
 
 const LobbyPage = (props) => {
 
@@ -11,7 +14,25 @@ const LobbyPage = (props) => {
     const [ShowHistory, setShowHistory] = useState(false);
     const [ShowAccount, setShowAccount] = useState(false);
     const [contactList, setContactList] = useState([]);
-    const [ShowAboutUs, setShowAboutUs] = useState(false)
+    const [ShowAboutUs, setShowAboutUs] = useState(false);
+    const [image, setImage] = useState(null);
+
+    useEffect(() => {
+        setImage(defaultProfile);
+        fetch(`${SERVER_URL}/get_photo`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username: props.username })
+        }).then((response) => {
+          if (response.status === 200) {
+            response.text().then((text) => {
+              setImage(text);
+            });
+          } else {
+            setImage(defaultProfile);
+          }
+        });
+      }, []);
 
 
     if (ShowContacts){
@@ -61,11 +82,25 @@ const LobbyPage = (props) => {
             <div className='logo-img' style={{width:'200px', height:'200px',borderRadius:'16px', marginTop:'-18%'}}>
             </div>
             <div className='isConnected'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16" style={{ marginRight: "8px", verticalAlign: "middle" , marginTop:'-2px'}}>
-        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
-    </svg>
-            Active user - <span>{props.username}</span>
+                <div 
+                    style={{ 
+                        width: "60px", 
+                        height: "60px", 
+                        borderRadius: "50%", 
+                        overflow: "hidden", 
+                        display: "flex", 
+                        justifyContent: "center", 
+                        alignItems: "center", 
+                        cursor: "pointer", 
+                        marginLeft: "-7%",
+                        border: "2px solid black",
+                        marginTop: "10px" 
+                    }}> 
+                    <img src={image} style={{ width: "100%", height: "100%", objectFit: "cover" }} alt=""/> 
+                </div>
+                <div className='activeUser' style={{ marginTop: "-11%" }}>Active user - <span>{props.username}</span></div>
             </div>
+            
             <div className='four-squares' style={{ float: "center", marginTop:'14%'}}>
             <div>
             <button className='square' style={{ width: "20%"}} onClick={handleContacts} >
@@ -100,7 +135,7 @@ const LobbyPage = (props) => {
 </svg>
                 </div>
                 <div>
-                <span>About as</span>
+                <span>About us</span>
                 </div>
                 </button>
 
