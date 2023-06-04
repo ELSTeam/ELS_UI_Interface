@@ -15,13 +15,14 @@ tbody tr:hover {
 
 .rows{
     text-align: center;
-    font-size: x-large;
-    font-family:monospace;
-    height: 45px;
+    font-size: 20px;
+    font-Family: 'Trebuchet MS';
+    height: 54px;
 }
 
 .firstRow{
-    font-size: large;
+    font-size: 28px;
+    font-Family: 'Trebuchet MS';
 }
 
 
@@ -39,8 +40,8 @@ tbody tr:hover {
 }
 
 .BackToLobbyFromHistory{
-    margin-top: 16%;
-    margin-left: 85%;
-    font-size: large;
-    font-weight:500;
+    color: black;
+    margin-left: 87%;
+    font-size: 150%;
+    font-weight:600;
 }
