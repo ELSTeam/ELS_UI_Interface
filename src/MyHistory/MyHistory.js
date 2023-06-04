@@ -8,6 +8,8 @@ import { SERVER_URL } from '../config';
 const MyHistory = (props) => {
   const [ShowLobby, setShowLobby] = useState(false);
   const [fallHistory, setFallHistory] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
 
   const username = props.username
   useEffect(() => {
@@ -15,6 +17,7 @@ const MyHistory = (props) => {
   }, []);
   
   const get_falls_history = () => {
+    setIsLoading(true); // Set loading status to true
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -30,6 +33,7 @@ const MyHistory = (props) => {
       })
       .then((data) => {
         setFallHistory(data);
+        setIsLoading(false); // Set loading status to false after data is fetched
         console.log(data)
       })
       .catch((error) => {
@@ -52,10 +56,10 @@ const MyHistory = (props) => {
 return (
   <div className="main-div">
       <div>
-        <div className="myContacts-header">My History</div>
+        <div className="myContacts-header" style={{fontSize:'500%', fontWeight:'bold', paddingTop:'4%'}}>My History</div>
         <div
           className="logo-img"
-          style={{ width: '120px', height: '120px', marginTop: '-100px', borderRadius: '16px' }}
+          style={{width:'200px', height:'200px',borderRadius:'16px', marginTop:'-10%'}}
         ></div>
       </div>
       <table className="table table-hover myTable-history" style={{ alignContent: 'center', hover: '20' }}>
@@ -64,6 +68,7 @@ return (
             <th scope="col">#</th>
             <th scope="col">Date</th>
             <th scope="col">Time</th>
+            <th scope="col">Video</th>
           </tr>
         </thead>
         <tbody>
@@ -78,8 +83,8 @@ return (
                     <svg
                       style={{ fill: 'black' }}
                       xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
+                      width="25"
+                      height="25"
                       fill="currentColor"
                       class="bi bi-caret-right-square"
                       viewBox="0 0 16 16"
